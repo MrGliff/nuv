@@ -4,8 +4,31 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 body {
     background-image: url(assets/images/axiom.png);
+}
+
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    font-size: 28px;
+    background-color: #f2e125;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 15px;
+    transition: 0.3s;
+}
+
+#backToTopBtn:hover {
+    background-color: #d3c423;
 }
 
 .logo {
