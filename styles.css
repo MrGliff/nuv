@@ -1,0 +1,96 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+background-image: url(assets/images/axiom.png);
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.apply {
+    background: #bd292c;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
+.apply:hover {
+    background: #000;
+}
+
+.apply:hover svg {
+    transform: translateX(5px);
+    transition: 0.3s ease-out;
+}
+
+.admission {
+    background: #f2e125;
+}
+
+form {
+    max-width: 50%;
+    margin: auto;
+    padding: 20px;
+    background-color: whitesmoke;
+    border: 1px dashed black;
+    border-radius: 3px;
+    /* box-shadow: 0px 7px 29px 0px; */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.button {
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 5px;
+    background-color: #f2e125;
+    color: black;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: #d3c423;
+}
+
+.button:active {
+    background-color: #000;
+    color: white;
+}
+
+form input, textarea, select {
+    border: 1px solid grey;
+    border-radius: 3px;
+    padding: 5px;   
+}
+
+.verify {
+    background-color: #f2e125;
+    color: #000;
+    transform: 0.3s ease-in-out;
+}
+
+.verify:hover {
+    background-color: #d3c423;
+}
+
+.formBody {
+    display: block;
+}
+
+.otp {
+    display: none;
+}
+
+.confirmation {
+    display: none;
+}
