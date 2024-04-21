@@ -5,8 +5,7 @@
 }
 
 body {
-background-image: url(assets/images/axiom.png);
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-image: url(assets/images/axiom.png);
 }
 
 .logo {
@@ -91,6 +90,6 @@ form input, textarea, select {
     display: none;
 }
 
-.confirmation {
+.confirmation, .confirmationBox {
     display: none;
 }
