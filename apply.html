@@ -1,228 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <title>Navrachana University</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/587ca56a48.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <title>Navrachana University</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/587ca56a48.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
 
-  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top"><i class="fa-solid fa-circle-up" style="color: #000;"></i></button>
+  <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top"><i class="fa-solid fa-circle-up"
+      style="color: #000;"></i></button>
 
-    <header class="text-gray-600 body-font">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-          <a href="index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <img class="logo" src="assets/images/logo.png" alt="">
-          </a>
-          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-            <a href="about.html" class="mr-5 hover:text-gray-900">About Us</a>
-            <a href="schools.html" class="mr-5 hover:text-gray-900">School</a>
-            <a href="programs.html" class="mr-5 hover:text-gray-900">Program</a>
-            <a href="students.html" class="mr-5 hover:text-gray-900">Students Corner</a>
+  <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+      <a href="index.html" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img class="logo" src="assets/images/logo.png" alt="">
+      </a>
+      <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <a href="index.html" class="mr-5 hover:text-gray-900">Home</a>
+        <a href="about.html" class="mr-5 hover:text-gray-900">About Us</a>
+        <a href="schools.html" class="mr-5 hover:text-gray-900">School</a>
+        <a href="beyond.html" class="mr-5 hover:text-gray-900">Beyond Books</a>
+        <a href="students.html" class="mr-5 hover:text-gray-900">Students Corner</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="formBody p-5">
+    <hr class="w-64 h-1 mx-auto mb-3 bg-gray-100 border-0 rounded dark:bg-gray-700">
+    <div class="formContainer">
+      <p class="application text-gray-900 text-3xl flex justify-center mb-5">Application Form</p>
+      <form class="items-center" onsubmit="return showotp()">
+        <label>First Name: </label><br>
+        <input class="firstName" type="text" required>
+        <span id="name-error" class="error-message"></span><br><br>
+
+        <label>Last Name: </label><br>
+        <input type="text" required><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" name="Gender" id="Male" value="Male" required>
+        <label class="font-normal" for="Male">Male</label><br>
+        <input type="radio" name="Gender" id="Female" value="Female" required>
+        <label class="font-normal" for="Female">Female</label><br>
+        <input type="radio" name="Gender" id="Other" value="Other" required>
+        <label class="font-normal" for="Other">Other</label><br><br>
+
+        <label>Date of Birth: </label><br>
+        <input type="date" name="DOB" required><br><br>
+
+        <label>Address: </label><br>
+        <textarea class="p-1" name="Address" id="Address" cols="30" rows="5" placeholder="Enter your Address here"
+          required></textarea>
+        <span id="address-error" class="error-message"></span><br><br>
+
+        <label>Phone Number: </label><br>
+        <input class="mobile" type="number" required>
+        <span id="mobile-error" class="error-message"></span><br><br>
+
+        <label>Email: </label><br>
+        <input class="email" type="email" name="abc@xyz.com" placeholder="name@example.com" required>
+        <span id="email-error" class="error-message"></span><br><br>
+
+        <label>Course: </label>
+        <select class="course" name="Course" id="Course">
+          <option value="select">Select Course</option>
+          <option value="CSE">BTech - CSE</option>
+          <option value="CSE">BTech - Electrical</option>
+          <option value="CSE">BTech - Civil</option>
+          <option value="CSE">BTech - Mechanical</option>
+          <option value="BCA">BCA</option>
+          <option value="DataScience">BSc - Data Science</option>
+          <option value="BCA">BSc - Chemistry</option>
+          <option value="BCA">BSc - Life Science</option>
+          <option value="BCA">BSc - Microbiology</option>
+          <option value="BCA">MSc - Chemistry</option>
+          <option value="BCA">MSc - Life Science</option>
+          <option value="BCA">MSc - Microbiology</option>
+          <option value="BCA">MSc - Clinical Embryology</option>
+          <option value="BCA">BBA</option>
+          <option value="BCA">BBA - LLB</option>
+          <option value="BCA">BA - Journalism & Mass Comm</option>
+          <option value="BCA">BA - Humanities & Social Sciences</option>
+          <option value="BCA">BEd</option>
+          <option value="BCA">BArch</option>
+          <option value="BCA">BDesign - Interior Design</option>
+          <option value="BCA">BDesign - Product Design</option>
+          <option value="BCA">BDesign - Visual Design</option>
+          <span id="course-error" class="error-message"></span>
+        </select><br><br>
+
+        <label>10th percentage: </label>
+        <input type="number" name="password" required><br><br>
+
+        <label>12th Percentage: </label>
+        <input type="number" name="Percentage" required><br><br>
+
+        <input class="tc" type="checkbox" id="agree" name="agree" value="agree" required>
+        <label for="agree">I agree to the terms and conditions</label>
+        <span id="agree-error" class="error-message"></span><br><br>
+
+        <input type="submit" name="submit" class="button">
+        <input type="reset" name="reset" class="button">
+      </form>
+    </div>
+  </div>
+
+  <section class="otp text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+      <form class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:m-auto w-full mt-10 md:mt-0"
+        onsubmit="showConfirmation()">
+        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">An OTP has been to your registered number: +91
+          7990569183</h2>
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-600">Enter OTP:</label>
+          <input type="number" id="otp" name="otp" oninput="checkOTP()"
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+          <span id="otp-error" class="otp-message"></span>
+        </div>
+        <input type="submit" value="Verify" class="verify border-0 py-2 px-8 focus:outline-none rounded text-lg">
+        <p class="text-xs text-gray-500 mt-3">You will not receive any OTP, just type 6 random numbers and click the
+          button</p>
+      </form>
+    </div>
+  </section>
+
+  <div class="confirmation px-5 py-36 mx-auto flex flex-wrap justify-center items-center" id="confirmationBox">
+    <p class="text-4xl text-center">Your Application has been submitted. You will receive a call very soon!</p>
+  </div>
+
+  <footer class="text-gray-600 body-font">
+    <div
+      class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-90 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <span class="text-3xl">Navrachana University</span>
+        </a>
+        <p class="mt-2 text-m text-gray-500">Vasna-Bhayli Road, <br>
+          Vadodara - 391 410 <br>
+          Gujarat, India <br>
+          Phone: <a href="tel:+912652617000">+91-265-2617000</a><br>
+          Mail: <a href="mailto:nuv@nuv.ac.in">nuv@nuv.ac.in</a></p>
+      </div>
+
+      <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Important Numbers</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Admission Inquiry: <br><a
+                  href="tel:912652617109">+91-265-2617109</a></a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">Placement Cell: <br><a
+                  href="tel:919316988277">+91-9316988277</a></a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">WhatsApp: <br><a href="https://wa.me/+919327843239"
+                  target="_blank">+91-9327843239</a></a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800">HR Dept: <br><a
+                  href="tel:912652617103">+91-265-2617103</a></a>
+            </li>
           </nav>
         </div>
-      </header>
-
-      <div class="formBody p-5">
-        <hr class="w-64 h-1 mx-auto mb-3 bg-gray-100 border-0 rounded dark:bg-gray-700">
-        <div class="formContainer">
-          <p class="application text-gray-900 text-3xl flex justify-center mb-5">Application Form</p>
-          <form class="items-center" onsubmit="return showotp()">
-              <label>First Name: </label><br>
-              <input class="firstName" type="text" required>
-              <span id="name-error" class="error-message"></span><br><br>
-
-              <label>Last Name: </label><br>
-              <input type="text" required><br><br>
-
-              <label>Gender:</label><br>
-              <input type="radio" name="Gender" id="Male" value="Male" required>
-              <label class="font-normal" for="Male">Male</label><br>
-              <input type="radio" name="Gender" id="Female" value="Female" required>
-              <label class="font-normal" for="Female">Female</label><br>
-              <input type="radio" name="Gender" id="Other" value="Other" required>
-              <label class="font-normal" for="Other">Other</label><br><br>
-
-              <label>Date of Birth: </label><br>
-              <input type="date" name="DOB" required><br><br>
-
-              <label>Address: </label><br>
-              <textarea class="p-1" name="Address" id="Address" cols="30" rows="5" placeholder="Enter your Address here" required></textarea>
-              <span id="address-error" class="error-message"></span><br><br>
-
-              <label>Phone Number: </label><br>
-              <input class="mobile" type="number" required>
-              <span id="mobile-error" class="error-message"></span><br><br>
-
-              <label>Email: </label><br>
-              <input class="email" type="email" name="abc@xyz.com" placeholder="name@example.com" required>
-              <span id="email-error" class="error-message"></span><br><br>
-
-              <label>Course: </label>
-              <select class="course" name="Course" id="Course">
-                  <option value="select">Select Course</option>
-                  <option value="CSE">BTech - CSE</option>
-                  <option value="CSE">BTech - Electrical</option>
-                  <option value="CSE">BTech - Civil</option>
-                  <option value="CSE">BTech - Mechanical</option>
-                  <option value="BCA">BCA</option>
-                  <option value="DataScience">BSc - Data Science</option>
-                  <option value="BCA">BSc - Chemistry</option>
-                  <option value="BCA">BSc - Life Science</option>
-                  <option value="BCA">BSc - Microbiology</option>
-                  <option value="BCA">MSc - Chemistry</option>
-                  <option value="BCA">MSc - Life Science</option>
-                  <option value="BCA">MSc - Microbiology</option>
-                  <option value="BCA">MSc - Clinical Embryology</option>
-                  <option value="BCA">BBA</option>
-                  <option value="BCA">BBA - LLB</option>
-                  <option value="BCA">BA - Journalism & Mass Comm</option>
-                  <option value="BCA">BA - Humanities & Social Sciences</option>
-                  <option value="BCA">BEd</option>
-                  <option value="BCA">BArch</option>
-                  <option value="BCA">BDesign - Interior Design</option>
-                  <option value="BCA">BDesign - Product Design</option>
-                  <option value="BCA">BDesign - Visual Design</option>
-                  <span id="course-error" class="error-message"></span>
-              </select><br><br>
-
-              <label>10th percentage: </label>
-              <input type="number" name="password" required><br><br>
-
-              <label>12th Percentage: </label>
-              <input type="number" name="Percentage" required><br><br>
-
-              <input class="tc" type="checkbox" id="agree" name="agree" value="agree" required>
-              <label for="agree">I agree to the terms and conditions</label>
-              <span id="agree-error" class="error-message"></span><br><br>
-
-              <input type="submit" name="submit" class="button">
-              <input type="reset" name="reset" class="button">
-          </form>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Quick Links</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" href="http://117.244.107.133:1111/library/">Library</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" href="apply.html">Admissions</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" target="_blank"
+                href="https://nuv.ac.in/wp-content/uploads/pdf/Privacy_Policy.pdf">Privacy Policy</a>
+            </li>
+            <li>
+              <a class="text-gray-600 hover:text-gray-800" target="_blank"
+                href="https://nuv.ac.in/wp-content/uploads/pdf/Online_Payment_Terms_and_Conditions.pdf">Terms &
+                Conditions</a>
+            </li>
+          </nav>
         </div>
-      </div> 
 
-    <section class="otp text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
-        <form class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:m-auto w-full mt-10 md:mt-0" onsubmit="showConfirmation()">
-          <h2 class="text-gray-900 text-lg font-medium title-font mb-5">An OTP has been to your registered number: +91 7990569183</h2>
-          <div class="relative mb-4">
-            <label for="email" class="leading-7 text-sm text-gray-600">Enter OTP:</label>
-            <input type="number" id="otp" name="otp" oninput="checkOTP()" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-            <span id="otp-error" class="otp-message"></span>
-          </div>
-          <input type="submit" value="Verify" class="verify border-0 py-2 px-8 focus:outline-none rounded text-lg">
-          <p class="text-xs text-gray-500 mt-3">You will not receive any OTP, just type 6 random numbers and click the button</p>
-        </form>
+        <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+          <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Miscellaneous</h2>
+          <nav class="list-none mb-10">
+            <li>
+              <a href="about.html" class="text-gray-600 hover:text-gray-800">About Us</a>
+            </li>
+            <li>
+              <a href="schools.html" class="text-gray-600 hover:text-gray-800">School</a>
+            </li>
+            <li>
+              <a href="beyond.html" class="text-gray-600 hover:text-gray-800">Beyond Books</a>
+            </li>
+            <li>
+              <a href="students.html" class="text-gray-600 hover:text-gray-800">Students Corner</a>
+            </li>
+          </nav>
+        </div>
       </div>
-    </section>
-
-    <div class="confirmation px-5 py-36 mx-auto flex flex-wrap justify-center items-center" id="confirmationBox">
-      <p class="text-4xl text-center">Your Application has been submitted. You will receive a call very soon!</p>
     </div>
-
-    <footer class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
-        <div class="w-90 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-            <span class="text-3xl">Navrachana University</span>
+    <div class="bg-gray-100">
+      <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+        <p class="text-gray-500 text-sm text-center sm:text-left">© Navrachana University —
+          <a href="https://github.com/MrGliff/nuv" rel="noopener noreferrer" class="text-gray-600 ml-1 underline"
+            target="_blank">@dharmin</a>
+        </p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+          <a class="text-gray-500" href="https://www.facebook.com/nuvofficial/">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
           </a>
-          <p class="mt-2 text-m text-gray-500">Vasna-Bhayli Road, <br>
-            Vadodara - 391 410 <br>
-            Gujarat, India <br>
-            Phone: <a href="tel:+912652617000">+91-265-2617000</a><br>
-            Mail: <a href="mailto:nuv@nuv.ac.in">nuv@nuv.ac.in</a></p>
-        </div>
-  
-        <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center justify-end">
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Important Numbers</h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Admission Inquiry: <br><a href="tel:912652617109">+91-265-2617109</a></a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">Placement Cell: <br><a href="tel:919316988277">+91-9316988277</a></a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">WhatsApp:  <br><a href="https://wa.me/+919327843239" target="_blank">+91-9327843239</a></a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800">HR Dept: <br><a href="tel:912652617103">+91-265-2617103</a></a>
-              </li>
-            </nav>
-          </div>
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Quick Links</h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a class="text-gray-600 hover:text-gray-800" href="http://117.244.107.133:1111/library/">Library</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800" href="apply.html">Admissions</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800" target="_blank" href="https://nuv.ac.in/wp-content/uploads/pdf/Privacy_Policy.pdf">Privacy Policy</a>
-              </li>
-              <li>
-                <a class="text-gray-600 hover:text-gray-800" target="_blank" href="https://nuv.ac.in/wp-content/uploads/pdf/Online_Payment_Terms_and_Conditions.pdf">Terms & Conditions</a>
-              </li>
-            </nav>
-          </div>
-
-          <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-            <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Miscellaneous</h2>
-            <nav class="list-none mb-10">
-              <li>
-                <a href="about.html" class="text-gray-600 hover:text-gray-800">About Us</a>
-              </li>
-              <li>
-                <a href="schools.html" class="text-gray-600 hover:text-gray-800">School</a>
-              </li>
-              <li>
-                <a href="programs.html" class="text-gray-600 hover:text-gray-800">Program</a>
-              </li>
-              <li>
-                <a href="students.html" class="text-gray-600 hover:text-gray-800">Students Corner</a>
-              </li>
-            </nav>
-          </div>
-        </div>
+          <a class="ml-3 text-gray-500" href="https://twitter.com/NavrachanaUni">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5"
+              viewBox="0 0 24 24">
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+              </path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://www.instagram.com/navrachanauniversity/">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-gray-500" href="https://in.linkedin.com/school/navrachana-university/">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+              stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
       </div>
-      <div class="bg-gray-100">
-        <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
-          <p class="text-gray-500 text-sm text-center sm:text-left">© Navrachana University —
-            <a href="https://github.com/MrGliff/nuv" rel="noopener noreferrer" class="text-gray-600 ml-1 underline" target="_blank">@dharmin</a>
-          </p>
-          <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <a class="text-gray-500" href="https://www.facebook.com/nuvofficial/">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-500" href="https://twitter.com/NavrachanaUni">
-              <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-500" href="https://www.instagram.com/navrachanauniversity/">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
-              </svg>
-            </a>
-            <a class="ml-3 text-gray-500" href="https://in.linkedin.com/school/navrachana-university/">
-              <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
-                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                <circle cx="4" cy="4" r="2" stroke="none"></circle>
-              </svg>
-            </a>
-          </span>
-        </div>
-      </div>
-    </footer>
+    </div>
+  </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
