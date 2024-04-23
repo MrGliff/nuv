@@ -118,8 +118,10 @@ form input, textarea, select {
 
 .schoolsImages {
     transition: all 0.3s ease-in-out;
+    border-radius: 5px;
 }
 
 .schoolsImages:hover {
     transform: scale(1.05);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
 }
