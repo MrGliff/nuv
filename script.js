@@ -19,6 +19,12 @@ function scrollToTop() {
 
 function showotp() {
     event.preventDefault();
+    document.querySelector('.otpStep').classList.add('border-yellow-300');
+    document.querySelector('.otpStep').classList.add('text-yellow-500');
+    document.querySelector('.otpStep').classList.add('bg-gray-100');
+    document.querySelector('.formStep').classList.remove('border-yellow-300');
+    document.querySelector('.formStep').classList.remove('text-yellow-500');
+    document.querySelector('.formStep').classList.remove('bg-gray-100');
     document.querySelector('.formBody').style.display = 'none';
     document.querySelector('.otp').style.display = 'block';
 }
@@ -89,6 +95,12 @@ function showConfirmation() {
         event.preventDefault();
         document.querySelector('.otp').style.display = 'none';
         document.querySelector('.confirmation').style.display = 'block';
+        document.querySelector('.confirmStep').classList.add('border-yellow-300');
+        document.querySelector('.confirmStep').classList.add('text-yellow-500');
+        document.querySelector('.confirmStep').classList.add('bg-gray-100');
+        document.querySelector('.otpStep').classList.remove('border-yellow-300');
+        document.querySelector('.otpStep').classList.remove('text-yellow-500');
+        document.querySelector('.otpStep').classList.remove('bg-gray-100');
     } else {
         const otpError = document.getElementById('otp-error');
         otpError.textContent = "OTP should be 6 digits long.";
